@@ -136,7 +136,7 @@ namespace Dungeon
 
                 WhompingWillow w = new WhompingWillow();
 
-                WhompingWillow w2 = new WhompingWillow("It was sleeping", 25,25,35,5,3,15,"You woke a sleeping Willow, it is extremly aggressive!",true);
+                WhompingWillow w2 = new WhompingWillow("Angry Whomping Willow!", 25,25,35,5,3,15,"You woke a sleeping Willow, it is extremly aggressive!",true);
 
                 CornishPixie c = new CornishPixie();
 
@@ -187,7 +187,16 @@ X) Exit
                                 Console.ForegroundColor = ConsoleColor.Green;
                                 Console.WriteLine("\nYou killed {0}!\n", monster.Name);
                                 Console.ResetColor();
-                                reload = true;// new room and monster
+                                score++;
+                                if (score == 10)
+                                {
+                                    Console.WriteLine("Congratulations, you have cleared the game!\n");
+                                    exit = true;
+                                }
+                                else
+                                {
+                                    reload = true;
+                                }
                             }//end if monster if dead
 
                             //Console.WriteLine("Attack Method Goes Here...");
